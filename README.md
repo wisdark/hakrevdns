@@ -9,19 +9,7 @@ This can be a useful way of finding domains and subdomains belonging to a compan
 ## Installation
 
 ```sh
-go get github.com/hakluke/hakrevdns
-```
-
-### Alternative Installation using automated install script (Linux)
-
-#### Note: Requires ```wget``` in order to download the golang tarball
-
-  - Installs compatible version of golang
-  - Builds hakrevdns and places the binary in ```/usr/local/bin```
-  
-```sh
-chmod +x install.sh
-./install.sh
+go install github.com/hakluke/hakrevdns@latest
 ```
 
 ## Usage
