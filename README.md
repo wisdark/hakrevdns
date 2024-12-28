@@ -38,18 +38,28 @@ hakluke~$ prips 173.0.84.0/24 | hakrevdns
 ```sh
 hakluke~$ hakrevdns -h
 Usage:
-  hakrevdns [OPTIONS]
+  main [OPTIONS]
 
 Application Options:
-  -t, --threads=           Number of threads (too many may get you banned, too few will be slow)
+  -t, --threads=           How many threads should be used (default: 8)
   -r, --resolver=          IP of the DNS resolver to use for lookups
+  -R, --resolvers-file=    File containing list of DNS resolvers to use for lookups      
+  -U, --use-default        Use default resolvers for lookups
   -P, --protocol=[tcp|udp] Protocol to use for lookups (default: udp)
-  -p, --port=              Port to bother the specified DNS resolver on (default: 53)
+  -p, --port=              Port to bother the specified DNS resolver on (default: 53)    
   -d, --domain             Output only domains
+  -h, --help               Show help message
 
 Help Options:
   -h, --help               Show this help message
 ```
+
+### New Flags
+    -U, --use-default: 
+    When specified, this flag tells the program to use a predefined list of default DNS resolvers for lookups. This is useful for ensuring consistent DNS resolution across various environments, especially if no custom resolvers are provided.
+    
+    -R, --resolvers-file: 
+    This flag allows you to specify a file containing a list of custom DNS resolvers. Each line in the file should contain a single resolver IP address. If both -R and -r are provided, the resolver specified by -r is added to the list of resolvers from the file.
 
 If you want to use a resolver not specified by your OS, say: 1.1.1.1, try this:
 
